@@ -6,6 +6,7 @@ pub enum Token {
     If(String),
     Else(String),
     Int(String),
+    Minus(String),
 
     // literals
     IntegerLiteral(i32),
@@ -49,6 +50,7 @@ impl Token {
             "RightBrace" => Token::RightBrace("{".to_string()),
             "GreaterThan" => Token::GreaterThan(">".to_string()),
             "LessThan" => Token::LessThan("<".to_string()),
+            "Minus" => Token::Minus("-".to_string()),
             _ => panic! ("invalid token type {}", token_type),
 
         }
@@ -72,6 +74,7 @@ impl Token {
             "RightBrace" => r"\}",
             "GreaterThan" => r">",
             "LessThan" => r"<",
+            "Minus" => r"-",
             _ => panic!("invalid token type: {}", token_type),
         }.to_string()
     }
